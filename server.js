@@ -33,13 +33,14 @@ app.use(async (ctx) => {
         case "POST":
             if (ctx.request.query.method === "allTickets") {
                 const {name, description} = ctx.request.body;
-                ctx.response.body = new Ticket(
+                const ticketPost = new Ticket(
                     null,
                     name,
                     description,
                     false,
                     new Date()
                 );
+                ctx.response.body = Ticket.update(ticketPost);
                 ctx.response.status = 200;
                 return;
             }
