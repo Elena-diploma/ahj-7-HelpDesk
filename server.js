@@ -39,8 +39,8 @@ app.use(async (ctx) => {
                 );
                 ticketPost.id = id;
                 await Ticket.update(ticketPost);
-                ctx.response.body = Ticket.getById(id);
-                    ctx.response.status = 200;
+                ctx.response.body = await Ticket.getById(id);
+                ctx.response.status = 200;
                 return;
             }
             break;
