@@ -32,16 +32,15 @@ app.use(async (ctx) => {
             break;
         case "POST":
             if (ctx.request.query.method === "allTickets") {
-                const {name, description} = ctx.request.body;
+                const {id, name, description} = ctx.request.body;
                 const ticketPost = new Ticket(
-                    null,
                     name,
-                    description,
-                    false,
-                    new Date()
+                    description
                 );
-                ctx.response.body = Ticket.update(ticketPost);
-                ctx.response.status = 200;
+                ticketPost.id = id;
+                await Ticket.update(ticketPost);
+                ctx.response.body = Ticket.getById(id);
+                    ctx.response.status = 200;
                 return;
             }
             break;
