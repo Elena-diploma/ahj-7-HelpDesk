@@ -1,0 +1,32 @@
+{
+  "name": "ahj-7-helpdesk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "forever server.js",
+    "watch": "forever -w server.js"
+  },
+  "engines": {
+    "node": "11.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elena-diploma/ahj-7-HelpDesk.git"
+  },
+  "author": "Elena Tursunova <elenatursunova@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elena-diploma/ahj-7-HelpDesk/issues"
+  },
+  "homepage": "https://github.com/Elena-diploma/ahj-7-HelpDesk#readme",
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "forever": "^4.0.3",
+    "koa": "^2.13.4",
+    "koa-body": "^4.2.0",
+    "koa-static": "^5.0.0",
+    "uuid": "^8.3.2"
+  }
+}
